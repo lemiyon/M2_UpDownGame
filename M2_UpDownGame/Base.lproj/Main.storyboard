@@ -17,11 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="정답을 넣어주세요!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h88-in-oIx">
-                                <rect key="frame" x="20" y="100" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEh-CF-sTL">
                                 <rect key="frame" x="550" y="138" width="30" height="30"/>
                                 <state key="normal" title=" 제출"/>
@@ -29,24 +24,10 @@
                                     <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tc4-aE-JeS"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qZ9-y4-MnN">
-                                <rect key="frame" x="20" y="28" width="560" height="29"/>
-                                <segments>
-                                    <segment title="1-10"/>
-                                    <segment title="1-50"/>
-                                    <segment title="1-100"/>
-                                </segments>
-                                <connections>
-                                    <action selector="changeGameMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="beY-xI-uTa"/>
-                                </connections>
-                            </segmentedControl>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NGf-Vc-oGf">
-                                <rect key="frame" x="20" y="90" width="560" height="2"/>
-                            </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N08-6r-hEd">
                                 <rect key="frame" x="121" y="138" width="115" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="115" id="Zwd-cE-kmc"/>
+                                    <constraint firstAttribute="width" constant="115" id="HJ2-fW-G6v"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -55,7 +36,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhp-97-hHI">
                                 <rect key="frame" x="20" y="309" width="560" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="3Lo-As-FnJ"/>
+                                    <constraint firstAttribute="height" constant="21" id="pvd-CW-HLe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -67,39 +48,88 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="QoV-Zh-rGb">
+                                <rect key="frame" x="20" y="28" width="560" height="102"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qZ9-y4-MnN">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="29"/>
+                                        <segments>
+                                            <segment title="1-10"/>
+                                            <segment title="1-50"/>
+                                            <segment title="1-100"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="changeGameMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="beY-xI-uTa"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ede-C7-w1R">
+                                        <rect key="frame" x="0.0" y="35" width="560" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="MHo-sj-vtT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NGf-Vc-oGf">
+                                        <rect key="frame" x="0.0" y="63" width="560" height="2"/>
+                                    </progressView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="정답을 넣어주세요!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h88-in-oIx">
+                                        <rect key="frame" x="0.0" y="72" width="560" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="QSw-t4-Vun">
+                                <rect key="frame" x="20" y="187" width="488" height="2"/>
+                                <color key="trackTintColor" red="1" green="0.0099468241870000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남은 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EK-d6-BiM">
+                                <rect key="frame" x="533" y="176" width="64" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="Fhw-4F-oSv"/>
+                                    <constraint firstAttribute="height" constant="21" id="h6m-wz-Abb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fEh-CF-sTL" firstAttribute="trailing" secondItem="Nhp-97-hHI" secondAttribute="trailing" id="0Xi-Gq-Atr"/>
-                            <constraint firstItem="NGf-Vc-oGf" firstAttribute="leading" secondItem="h88-in-oIx" secondAttribute="leading" id="2B1-si-0Re"/>
-                            <constraint firstItem="Nhp-97-hHI" firstAttribute="leading" secondItem="ZGs-Rw-U1s" secondAttribute="leading" id="2Tc-rW-vSX"/>
-                            <constraint firstItem="qZ9-y4-MnN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="4oU-Mb-3Mi"/>
-                            <constraint firstItem="NGf-Vc-oGf" firstAttribute="top" secondItem="qZ9-y4-MnN" secondAttribute="bottom" constant="34" id="671-Ks-0kl"/>
-                            <constraint firstItem="ZGs-Rw-U1s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6XQ-0n-oY4"/>
-                            <constraint firstItem="qZ9-y4-MnN" firstAttribute="trailing" secondItem="NGf-Vc-oGf" secondAttribute="trailing" id="A4g-jX-RBn"/>
-                            <constraint firstItem="fEh-CF-sTL" firstAttribute="trailing" secondItem="h88-in-oIx" secondAttribute="trailing" id="IkI-j3-vUY"/>
-                            <constraint firstItem="h88-in-oIx" firstAttribute="top" secondItem="NGf-Vc-oGf" secondAttribute="bottom" constant="8" symbolic="YES" id="N7A-UQ-tfw"/>
-                            <constraint firstItem="NGf-Vc-oGf" firstAttribute="trailing" secondItem="h88-in-oIx" secondAttribute="trailing" id="PPn-Dl-OET"/>
-                            <constraint firstItem="ZGs-Rw-U1s" firstAttribute="baseline" secondItem="N08-6r-hEd" secondAttribute="baseline" id="UXh-ri-pwb"/>
-                            <constraint firstItem="qZ9-y4-MnN" firstAttribute="leading" secondItem="NGf-Vc-oGf" secondAttribute="leading" id="UjU-D1-vqU"/>
-                            <constraint firstItem="fEh-CF-sTL" firstAttribute="top" secondItem="h88-in-oIx" secondAttribute="bottom" constant="8" symbolic="YES" id="VYl-7Y-obJ"/>
-                            <constraint firstItem="h88-in-oIx" firstAttribute="leading" secondItem="ZGs-Rw-U1s" secondAttribute="leading" id="Wi2-W2-Qwr"/>
-                            <constraint firstItem="fEh-CF-sTL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="auA-BU-fdA"/>
-                            <constraint firstItem="N08-6r-hEd" firstAttribute="leading" secondItem="ZGs-Rw-U1s" secondAttribute="trailing" constant="24" id="eC1-vN-Fgf"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nhp-97-hHI" secondAttribute="bottom" constant="270" id="pKE-bv-FJg"/>
-                            <constraint firstItem="fEh-CF-sTL" firstAttribute="top" secondItem="N08-6r-hEd" secondAttribute="top" id="wJ3-rV-P5a"/>
+                            <constraint firstItem="QoV-Zh-rGb" firstAttribute="trailing" secondItem="fEh-CF-sTL" secondAttribute="trailing" id="02A-nY-Bza"/>
+                            <constraint firstItem="ZGs-Rw-U1s" firstAttribute="top" secondItem="QoV-Zh-rGb" secondAttribute="bottom" constant="8" symbolic="YES" id="7cd-hH-FBM"/>
+                            <constraint firstItem="9EK-d6-BiM" firstAttribute="centerY" secondItem="QSw-t4-Vun" secondAttribute="centerY" constant="-1.5" id="7xZ-Te-E8x"/>
+                            <constraint firstItem="9EK-d6-BiM" firstAttribute="trailing" secondItem="fEh-CF-sTL" secondAttribute="trailing" constant="17" id="Eld-ez-j1r"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nhp-97-hHI" secondAttribute="bottom" constant="270" id="HyA-3N-oFx"/>
+                            <constraint firstItem="QoV-Zh-rGb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Mjd-mg-Z5F"/>
+                            <constraint firstItem="ZGs-Rw-U1s" firstAttribute="leading" secondItem="QoV-Zh-rGb" secondAttribute="leading" id="MzL-MU-cBn"/>
+                            <constraint firstItem="fEh-CF-sTL" firstAttribute="top" secondItem="N08-6r-hEd" secondAttribute="top" id="S2y-Ju-rh7"/>
+                            <constraint firstItem="QoV-Zh-rGb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SgS-bT-CAp"/>
+                            <constraint firstItem="9EK-d6-BiM" firstAttribute="leading" secondItem="QSw-t4-Vun" secondAttribute="trailing" constant="25" id="Vgs-Y0-6az"/>
+                            <constraint firstItem="QSw-t4-Vun" firstAttribute="leading" secondItem="ZGs-Rw-U1s" secondAttribute="leading" id="ZJ8-qO-qAr"/>
+                            <constraint firstItem="ZGs-Rw-U1s" firstAttribute="baseline" secondItem="N08-6r-hEd" secondAttribute="baseline" id="aap-tF-CZP"/>
+                            <constraint firstItem="9EK-d6-BiM" firstAttribute="top" secondItem="fEh-CF-sTL" secondAttribute="bottom" constant="8" id="dCL-bU-X56"/>
+                            <constraint firstItem="ZGs-Rw-U1s" firstAttribute="leading" secondItem="Nhp-97-hHI" secondAttribute="leading" id="gQX-ac-ahT"/>
+                            <constraint firstItem="N08-6r-hEd" firstAttribute="leading" secondItem="ZGs-Rw-U1s" secondAttribute="trailing" constant="24" id="gpO-1l-aaT"/>
+                            <constraint firstItem="QoV-Zh-rGb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="idO-fi-Irn"/>
+                            <constraint firstItem="fEh-CF-sTL" firstAttribute="trailing" secondItem="Nhp-97-hHI" secondAttribute="trailing" id="kzn-pm-PO0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="gameCount" destination="N08-6r-hEd" id="4ns-rE-qd6"/>
                         <outlet property="gameState" destination="NGf-Vc-oGf" id="kbN-b6-ZiG"/>
+                        <outlet property="labelGameMode" destination="ede-C7-w1R" id="PtS-qn-2tk"/>
+                        <outlet property="progressRemainTime" destination="QSw-t4-Vun" id="FBj-P1-Aam"/>
                         <outlet property="txtFieldAnswerSheet" destination="h88-in-oIx" id="16l-cX-0Ho"/>
                         <outlet property="upOrDown" destination="Nhp-97-hHI" id="21l-lX-VEA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720" y="419"/>
+            <point key="canvasLocation" x="967" y="476"/>
         </scene>
     </scenes>
 </document>
