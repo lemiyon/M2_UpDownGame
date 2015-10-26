@@ -50,7 +50,7 @@ class ViewController: UIViewController {
             timer.invalidate()
         }
         //횟수가 5회 초과 시
-        if count >= 5
+        if count > 5
         {
            
             //게임에 졌다는 다이얼로그를 띄운다
